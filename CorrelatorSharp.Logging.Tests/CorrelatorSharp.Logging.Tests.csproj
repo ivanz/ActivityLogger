@@ -54,9 +54,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurationSpecs.cs" />
+    <Compile Include="LogManagerSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CorrelatorSharp.Logging.NLog\CorrelatorSharp.Logging.NLog.csproj">
+      <Project>{807DB814-0BE3-4A7C-863D-B395F5769EB3}</Project>
+      <Name>CorrelatorSharp.Logging.NLog</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CorrelatorSharp.Logging\CorrelatorSharp.Logging.csproj">
       <Project>{e9b4f62a-e338-41c2-89e0-2fd70eb5c5f9}</Project>
       <Name>CorrelatorSharp.Logging</Name>

@@ -19,7 +19,7 @@ namespace CorrelatorSharp.Logging
         }
 
 
-        internal static ILogManagerAdaptor LogManager {
+        public static ILogManagerAdaptor LogManager {
             get {
                 if (_logManager == null)
                     return _dummyLogManager.Value;
