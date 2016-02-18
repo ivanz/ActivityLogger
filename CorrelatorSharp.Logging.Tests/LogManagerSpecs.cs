@@ -18,7 +18,7 @@ namespace CorrelatorSharp.Logging.Tests
             LoggingConfiguration.LogManager = new LogManagerAdaptor();  
         };
 
-        Because of = () => _logger = LogManager.GetCurrentClassLogger();
+        Because of = () => { _logger = LogManager.GetCurrentClassLogger(); Console.WriteLine($"Logger name: {_logger.Name};"); };
 
         It should_have_caling_class_name_as_logger = () => _logger.Name.ShouldEqual("CorrelatorSharp.Logging.Tests.LogManagerSpecs+<>c");
     }
