@@ -23,6 +23,9 @@ namespace CorrelatorSharp.Logging
             var frame = new StackFrame(framesToSkip, false);
             var method = frame.GetMethod();
             var declaryingType = method.DeclaringType;
+
+            Console.WriteLine($"Modlue: {method.DeclaringType.Module.Name}");
+
             if (declaryingType == null)
                 return method.Name;
 
