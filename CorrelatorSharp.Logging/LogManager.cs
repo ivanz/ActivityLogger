@@ -8,29 +8,13 @@ namespace CorrelatorSharp.Logging
     {
         public static ILogger GetCurrentClassLogger()
         {
-            var name = GetClassFullName();
-            return GetLogger(name);
+            StackFrame frame = new StackFrame(1, false);
+            return LoggingConfiguration.LogManager.GetLogger(frame.GetMethod().DeclaringType.FullName);
         }
 
         public static ILogger GetLogger(string name)
         {
             return LoggingConfiguration.LogManager.GetLogger(name);
         }
-
-        private static string GetClassFullName()
-        {
-            var framesToSkip = 2;
-            var frame = new StackFrame(framesToSkip, false);
-            var method = frame.GetMethod();
-            var declaryingType = method.DeclaringType;
-
-            Console.WriteLine($"Modlue: {method.DeclaringType.Module.Name}");
-
-            if (declaryingType == null)
-                return method.Name;
-
-            return declaryingType.FullName;
-        }
-
     }
 }
